@@ -3,7 +3,6 @@
     <nav class="bg-white shadow">
       <!-- Navigation bar content -->
     </nav>
-
     <header class="py-10 bg-gray-900">
       <div class="container mx-auto text-center">
         <h1 class="text-4xl font-semibold text-white">Welcome to Our Laundry Service</h1>
@@ -22,17 +21,17 @@
           <!-- Service cards -->
           <div class="bg-white shadow rounded-lg p-6">
             <h3 class="text-lg font-semibold">Wash & Fold</h3>
-            <p class="mt-4 text-gray-600">We'll wash and fold your clothes with care</p>
+            <p class="mt-4 text-gray-600">We'll wash and fold your clothes with care.</p>
           </div>
 
           <div class="bg-white shadow rounded-lg p-6">
             <h3 class="text-lg font-semibold">Dry Cleaning</h3>
-            <p class="mt-4 text-gray-600">Professional dry cleaning for your delicate garments</p>
+            <p class="mt-4 text-gray-600">Professional dry cleaning for your delicate garments.</p>
           </div>
 
           <div class="bg-white shadow rounded-lg p-6">
             <h3 class="text-lg font-semibold">Ironing</h3>
-            <p class="mt-4 text-gray-600">We'll iron your clothes to perfection</p>
+            <p class="mt-4 text-gray-600">We'll iron your clothes to perfection.</p>
           </div>
         </div>
       </div>
