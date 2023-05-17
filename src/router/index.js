@@ -6,8 +6,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'landing-page',
-      component: () => import('../views/LandingPage.vue')
+      component: () => import('../views/Guest/LandingPage.vue')
     },
+    {
+      path: '/admin-dashboard',
+      name: 'admin-dashboard',
+      component: () => import('../views/Admin/Templates/AdminDashboard.vue'),
+    }
   ]
 })
 
