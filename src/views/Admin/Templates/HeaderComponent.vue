@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <!-- Right section -->z
+    <!-- Right section -->
     <div class="flex items-center">
       <div class="relative">
         <!-- Notification icon -->
