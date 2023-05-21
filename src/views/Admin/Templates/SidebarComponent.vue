@@ -1,29 +1,17 @@
-<!--
-TODO
-  1. Add Logo in the top section
-  2. Customize the icons and list menu
--->
 <template>
-  <aside class="hidden md:block bg-gray-900 text-gray-500 flex flex-col relative">
-    <!-- Sidebar content here -->
-    <nav class="flex flex-col flex-grow py-4">
-      <a href="#" class="flex items-center py-2 px-6">
-        <svg class="h-6 w-6 text-gray-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
+  <aside class="bg-white text-gray-400 flex flex-col overflow-y-auto md:flex-row md:justify-between">
+    <!-- Logo Header here -->
+    <div class="flex flex-col items-center justify-center my-2 mt-4 h-16 md:h-auto md:my-0">
+      <img class="h-8 w-8" src="../../../assets/user-photo.png" alt="Logo" />
+      <!-- label for logo here, make it aesthetic-->
+      <span class="mt-1 font-semibold text-black">Laundry Xpress</span>
+    </div>
+    <nav class="flex flex-col flex-grow py-4 px-4 md:flex-row md:py-0">
+      <a href="#" class="flex items-center py-2 px-6 rounded-3xl bg-green-100 text-green-500 font-semibold md:mr-4">
+        <div class="animate-spin mr-2">
+          <LifebuoyIcon class="h-6 w-6" />
+        </div>
         Dashboard
-      </a>
-      <a href="#" class="flex items-center py-2 px-6">
-        <svg class="h-6 w-6 text-gray-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-        Products
-      </a>
-      <a href="#" class="flex items-center py-2 px-6">
-        <svg class="h-6 w-6 text-gray-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
-        </svg>
-        Payments
       </a>
       <a href="#" class="flex items-center py-2 px-6">
         <svg class="h-6 w-6 text-gray-300 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,21 +20,15 @@ TODO
         Logout
       </a>
     </nav>
-    <div class="absolute bottom-0 text-gray-400 text-center text-xs w-full">
-      <p>&copy; 2023. All rights reserved</p>
-      <p class="pb-3" >Ahmad Habibul Ulum</p>
-    </div>
   </aside>
 </template>
 
-<script>
-export default {
-  // Component logic here...
-}
+<script setup>
+import { LifebuoyIcon } from "@heroicons/vue/24/outline";
 </script>
 
 <style>
 aside {
-  height: 100vh;
+  height: calc(100vh - 50px); /* Adjust the height based on your footer height */
 }
 </style>

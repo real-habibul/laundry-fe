@@ -1,55 +1,67 @@
 <template>
   <div class="flex">
-    <SidebarComponent v-show="!isMobileSize" />
     <div class="flex flex-col flex-1">
       <HeaderComponent />
-      <MainContent />
+
+      <!-- Menubar -->
+      <div class="bg-white text-gray-400 flex flex-col overflow-y-auto">
+        <nav class="flex flex-col flex-grow py-4 px-4 md:flex-row md:py-0">
+          <a
+            :class="{ 'bg-green-100 text-green-500': activeMenu === 'dashboard' }"
+            class="flex items-center py-2 px-6 rounded-3xl font-semibold md:mr-4"
+            href="#"
+            @click="setActiveMenu('dashboard')"
+          >
+            <div class="animate-spin mr-2">
+              <LifebuoyIcon class="h-6 w-6" />
+            </div>
+            Dashboard
+          </a>
+          <a
+            :class="{ 'bg-green-100 text-green-500': activeMenu === 'order' }"
+            class="flex items-center py-2 px-6 font-semibold"
+            href="#"
+            @click="setActiveMenu('order')"
+          >
+            <PuzzlePieceIcon class="h-6 w-6 text-gray-300 mr-2" />
+            New Orders
+          </a>
+        </nav>
+
+        <div v-if="activeMenu === 'dashboard'">
+          <DashboardContent />
+        </div>
+        <div v-if="activeMenu === 'order'">
+          <!-- Content for Logout menu -->
+        </div>
+      </div>
+
     </div>
-    <button @click="toggleMobileSidebar" class="md:hidden fixed bottom-4 right-4 bg-gray-900 text-white p-2 rounded">
-      <svg v-if="isMobileSidebarVisible" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-      <svg v-else class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
   </div>
+  <footer class="bg-gray-50 text-gray-600 py-4 px-4 text-center">
+    <div class="text-sm">© 2023 Ahmad Habibul Ulum. All rights reserved.</div>
+  </footer>
 </template>
 
-<script>
-import HeaderComponent from './HeaderComponent.vue';
-import SidebarComponent from './SidebarComponent.vue';
-import MainContent from './MainContentComponent.vue';
+<script setup>
+import { LifebuoyIcon, PuzzlePieceIcon } from "@heroicons/vue/24/outline";
+import { ref } from "vue";
+import HeaderComponent from "@/views/Admin/Templates/HeaderComponent.vue";
 
-export default {
-  components: {
-    HeaderComponent,
-    SidebarComponent,
-    MainContent,
-  },
-  data() {
-    return {
-      isMobileSidebarVisible: false,
-    };
-  },
-  computed: {
-    isMobileSize() {
-      return window.innerWidth < 768; // Adjust the breakpoint as needed
-    },
-  },
-  methods: {
-    toggleMobileSidebar() {
-      this.isMobileSidebarVisible = !this.isMobileSidebarVisible;
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', () => {
-      this.isMobileSidebarVisible = false;
-    });
-  },
+// List of pages
+import DashboardContent from "@/views/Admin/Pages/DashboardPages.vue";
+
+const activeMenu = ref("dashboard");
+
+const setActiveMenu = (menu) => {
+  activeMenu.value = menu;
 };
 </script>
 
 <style>
-/* Component styles here... */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 </style>
