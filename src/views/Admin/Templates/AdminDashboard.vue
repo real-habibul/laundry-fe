@@ -24,7 +24,7 @@
             @click="setActiveMenu('order')"
           >
             <PuzzlePieceIcon class="h-6 w-6 text-gray-300 mr-2" />
-            New Orders
+            Customer
           </a>
         </nav>
 
@@ -32,7 +32,7 @@
           <DashboardContent />
         </div>
         <div v-if="activeMenu === 'order'">
-          <!-- Content for Logout menu -->
+          <CustomerContent />
         </div>
       </div>
 
@@ -50,8 +50,8 @@ import HeaderComponent from "@/views/Admin/Templates/HeaderComponent.vue";
 
 // List of pages
 import DashboardContent from "@/views/Admin/Pages/DashboardPages.vue";
-
-const activeMenu = ref("dashboard");
+import CustomerContent from "@/views/Admin/Pages/CustomerPages.vue";
+const activeMenu = ref("order");
 
 const setActiveMenu = (menu) => {
   activeMenu.value = menu;

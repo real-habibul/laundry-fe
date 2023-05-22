@@ -2,7 +2,7 @@
   <!-- Logo Header here -->
   <div class="flex flex-col items-center justify-center my-2 mt-4 h-16 md:h-auto md:my-0">
     <img alt="Logo" class="h-8 w-8" src="@/assets/user-photo.png" />
-    <span class="mt-1 font-semibold text-black">Laundry eXpress</span>
+    <span class="mt-1 font-semibold text-black">MIS</span>
   </div>
   <header class="bg-gray-50 p-4 flex items-center justify-between">
     <!-- Left section -->
